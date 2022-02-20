@@ -1,0 +1,111 @@
+#Creando la base de datos de nombre "empresa"
+CREATE SCHEMA empresa;
+#Podemos hacer doble click sobre la lista de schemas, pero para asegurarnos utilizamos USE
+USE empresa;
+#Creamos la tabla clientes , CON NOT NULL A DNI PORQUE ES PRIMARY KEY
+CREATE TABLE tb_clientes(
+DNI VARCHAR(100) NOT NULL,
+NOMBRE VARCHAR(100) NULL,
+DIRECCION VARCHAR(150),
+BARRIO VARCHAR(50),
+CIUDAD VARCHAR(50),
+ESTADO VARCHAR(10),
+CP VARCHAR(10),
+FECHA_NACIMIENTO DATE,
+EDAD SMALLINT,
+SEXO VARCHAR(1),
+LIMITE_CREDITO FLOAT,
+VOLUMEN_COMPRA FLOAT,
+PRIMERA_COMPRA BIT,
+PRIMARY KEY(DNI));
+
+#Seleccionamos la tabla para ver el contenido de la misma
+
+SELECT * FROM tb_clientes;
+
+# Creamos las demas tablas
+CREATE TABLE tb_vendedor(
+MATRICULA VARCHAR(50) NOT NULL,
+NOMBRE VARCHAR(100),
+BARRIO VARCHAR(100),
+COMISION FLOAT,
+FECHA_ADMISION DATE,
+VACACIONES BIT(1),
+PRIMARY KEY(MATRICULA));
+
+CREATE TABLE tb_productos(
+CODIGO VARCHAR(10) NOT NULL,
+DESCRIPCION VARCHAR(100),
+SABOR VARCHAR(50),
+TAMANO VARCHAR(50),
+ENVASE VARCHAR(50),
+PRECIO FLOAT,
+PRIMARY KEY(CODIGO));
+
+CREATE TABLE tb_facturas(
+NUMERO INT NOT NULL,
+FECHA DATE,
+DNI VARCHAR(11) NOT NULL,
+MATRICULA VARCHAR(5) NOT NULL,
+IMPUESTO FLOAT,
+PRIMARY KEY(NUMERO),
+FOREIGN KEY(DNI) REFERENCES tb_clientes(DNI),
+FOREIGN KEY(MATRICULA) REFERENCES tb_vendedor(MATRICULA));
+
+CREATE TABLE tb_items(
+NUMERO INT NOT NULL,
+CODIGO VARCHAR(10) NOT NULL,
+CANTIDAD INT,
+PRECIO FLOAT,
+PRIMARY KEY(NUMERO,CODIGO),
+FOREIGN KEY(NUMERO) REFERENCES tb_facturas(NUMERO),
+FOREIGN KEY(CODIGO) REFERENCES tb_productos(CODIGO));
+
+#Para importar el dataset
+CREATE DATABASE jugos_ventas;
+USE jugos_ventas;
+
+SELECT * FROM empresa.tb_items;
+
+#Importamos registros
+USE empresa;
+
+INSERT INTO tb_clientes
+SELECT DNI, NOMBRE, DIRECCION_1 AS DIRECCION, BARRIO,CIUDAD,ESTADO,CP,FECHA_DE_NACIMIENTO AS FECHA_NACIMIENTO,
+EDAD,SEXO,LIMITE_DE_CREDITO AS LIMITE_CREDITO,VOLUMEN_DE_COMPRA AS VOLUMEN_COMPRA,PRIMERA_COMPRA
+FROM jugos_ventas.tabla_de_clientes;
+
+INSERT INTO tb_vendedor
+SELECT MATRICULA,NOMBRE,BARRIO,PORCENTAJE_COMISION AS COMISION,FECHA_ADMISION,VACACIONES
+FROM jugos_ventas.tabla_de_vendedores;
+
+INSERT INTO tb_productos
+SELECT CODIGO_DEL_PRODUCTO AS CODIGO, NOMBRE_DEL_PRODUCTO AS DESCRIPCION, SABOR,TAMANO,ENVASE,PRECIO_DE_LISTA AS PRECIO
+FROM jugos_ventas.tabla_de_productos;
+
+#El siguiente codigo nos tira error, por valores faltantes de DNI en la tabla principal de clientes
+INSERT INTO tb_facturas
+SELECT NUMERO, FECHA_VENTA AS FECHA,DNI, MATRICULA, IMPUESTO
+FROM jugos_ventas.facturas;
+
+#Notamos que el error, se debe a que faltan DNI en la tabla principal
+SELECT DISTINCT DNI 
+FROM jugos_ventas.facturas 
+WHERE DNI NOT IN (SELECT DNI from tb_clientes);
+
+#Insertamos los DNI que faltaban con datos aleatorios
+INSERT INTO tb_clientes (DNI, NOMBRE, DIRECCION, BARRIO, CIUDAD, ESTADO, CP, FECHA_NACIMIENTO, EDAD, SEXO, LIMITE_CREDITO, VOLUMEN_COMPRA, PRIMERA_COMPRA)
+ VALUES ('19290992743', 'Rodrigo Villa', 'Libertadores 65', 'Héroes', 'Ciudad de México', 'EM', '21002020', '1998-05-30', 22, 'M', 120000, 220000, 0),
+  ('2600586709', 'Raúl Meneses', 'Estudiantes 89', 'Centro', 'Ciudad de México', 'EM', '22002012', '1999-08-13', 21, 'M', 120000, 210000, 1);
+  
+#Seguimos importando datos
+INSERT INTO tb_facturas
+SELECT NUMERO, FECHA_VENTA AS FECHA,DNI, MATRICULA, IMPUESTO
+FROM jugos_ventas.facturas;
+ 
+INSERT INTO tb_items
+SELECT NUMERO, CODIGO_DEL_PRODUCTO AS CODIGO, CANTIDAD, PRECIO
+FROM jugos_ventas.items_facturas;
+
+
+
