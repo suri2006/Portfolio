@@ -3,7 +3,7 @@
 
 # Proyectos
 
-## Proyecto 2: DashBoard Disney+ (MySQL-PowerBI)
+## Proyecto: DashBoard Disney+ (MySQL-PowerBI)
 Analísis de datos de un dataset de Kaggle sobre datos de péliculas y shows en Disney+, realizado con MySQL para la limpieza de datos y PowerBi para el dashboard
 
 
