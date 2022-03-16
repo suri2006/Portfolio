@@ -5,4 +5,4 @@
 
 ## Proyecto 2: DashBoard Disney+ (PowerBI)
 
-![Image text](https://drive.google.com/file/d/1aok89K5J9vrw4jAWVuvi1xPnDdeFY8ve/view?usp=sharing)
+![Image text](https://ibb.co/rFLSCHW)
