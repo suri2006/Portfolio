@@ -3,6 +3,13 @@
 
 # Proyectos
 
+## Data analysis with Python-Freecodecamp-Projects [ABRIL 2022]
+Proyectos realizados con python usando las librerias Pandas, Seaborn, Numpy ,Scipy y Matplotlib. Para obtener el certificado de Freecodecamp
+
+
+![Image text](https://i.ibb.co/30Mzv3F/Freecodepyanalysis.png)
+
+
 ## Dashboard Spotify (Excel-PowerBI) [MARZO 2022]
 Analísis de datos de un dataset de Kaggle sobre datos de canciones de Spotify, realizado con Excel para la limpieza de datos y PowerBi para el dashboard
 
@@ -29,4 +36,5 @@ Creamos una base de datos para emular un negocio de venta de jugos, realizando l
 
 
 ![Image text](https://i.ibb.co/BzRhgfh/1-Data-My-SQL.jpg)
+
 
