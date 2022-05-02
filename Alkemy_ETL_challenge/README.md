@@ -17,3 +17,6 @@ En el mismo cmd una vez utilizado el entorno virtual instalamos
 -	Pip install csv
 -	Pip install openpyxl
 -	Pip install psycopg2
+
+## Ejecutando el programa
+Solo hay que ejecutar main.py 
