@@ -3,6 +3,8 @@
 
 # Proyectos
 
+![](pokegif.gif)
+
 
 ## [ETL_ALKEMY_CHALLENGE (Python-PostgreSQL) [MAYO 2022]](https://github.com/suri2006/Portfolio/tree/main/Alkemy_ETL_challenge)
 Proyecto de la aceleradora Alkemy, en un proceso de ETL, extrae datasets de una plataforma del gobierno , se transforman y se suben a una base de datos en PostgreSQL
