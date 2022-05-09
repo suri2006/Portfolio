@@ -7,9 +7,9 @@
 ## [POKEMON PROJECT : ETL(ApiPokemon)-DASHBOARD (Python-Power BI - MySQL](https://github.com/suri2006/Portfolio/tree/main/Pokemon_ETL_dashboard)
 Proyecto personal de un ETL, extrayendo datos de la api de pokémon:
 https://pokeapi.co/
-
 El ETL es realizado por python luego subido a en MySQL local, para posteriormente realizar el dashboard en Power BI conectado a la base de datos MySQL
 ![](Pokkegif.gif)
+
 ## [ETL_ALKEMY_CHALLENGE (Python-PostgreSQL) [MAYO 2022]](https://github.com/suri2006/Portfolio/tree/main/Alkemy_ETL_challenge)
 Proyecto de la aceleradora Alkemy, en un proceso de ETL, extrae datasets de una plataforma del gobierno , se transforman y se suben a una base de datos en PostgreSQL
 Todo mediante el uso de Python 
