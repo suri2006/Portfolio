@@ -6,7 +6,7 @@
 ## [RANDSTAD PROJECT : Extracción de tablas y DASHBOARD (Python-Looker](https://github.com/suri2006/Portfolio/tree/main/Randstad_Project)
 Proyecto personal de extracción de todas tablas de los reportes salariales de Randstad que se encuentran en PDF con python.
 
-![Imagen](randastad_imag.png)
+![Imagen](randstad_imag.jpg)
 
 
 ## [POKEMON PROJECT : ETL(ApiPokemon)-DASHBOARD (Python-Power BI - MySQL](https://github.com/suri2006/Portfolio/tree/main/Pokemon_ETL_dashboard)
