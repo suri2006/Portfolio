@@ -1,0 +1,10 @@
+requests
+selenium
+beautifulsoup4
+pdfplumber
+google-generativeai
+psycopg2-binary
+prefect
+telethon
+pandas
+python-dotenv
