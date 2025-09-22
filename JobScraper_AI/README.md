@@ -44,14 +44,10 @@ Documentacion con detalles de las Api keys y cuidados con telegram.
 
 ⚙️ Instalación
 - Cloná el repositorio
-git clone https://github.com/tu_usuario/jobscraper-ai.git
-cd jobscraper-ai
-
 
 - Creá un entorno virtual
 python -m venv venv
 source venv/bin/activate  # o venv\Scripts\activate en Windows
-
 
 - Instalá las dependencias
 pip install -r requirements.txt
@@ -61,8 +57,6 @@ pip install -r requirements.txt
 - Configurá tu archivo .env
 Copiá .env.example a .env y completá tus credenciales:
 cp .env.example .env
-
-
 
 
 🔐 Variables de entorno (.env)
@@ -86,7 +80,6 @@ Telegram
 - api_id_telegram: ID de API de Telegram
 - api_hash_telegram: Hash secreto de la API
 - id_grupo_telegram: ID o alias del grupo de nuestro grupo Telegram destino, donde se subiran nuestras recomendaciones (ej. @Ofertas_Empleos_1).Este grupo debe estar publico.
-
 
 
 🧪 Ejecución
