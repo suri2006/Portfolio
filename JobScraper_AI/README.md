@@ -11,20 +11,32 @@ JobScraper AI es un sistema automatizado que recopila ofertas laborales desde si
 - ⚙️ Orquestación completa con Prefect (flows + tasks)
 
 🧱 Estructura del proyecto
-├── flows/
-│   ├── __init__.py
-│   ├── EducaionIT_flow.py
-│   ├── gemini_recomedacion.py
-│   ├── Linkedin_flow.py
-│   ├── SQL_SP_Empleos_Flow.py
-│   └── Telegram_flow.py
-├── .env
-├── requirements.txt
-├── README.md
-├── mi_sesion.session (se deberá crear con el inicio de sesion en Telegram, leer Documentacion.pdf para mas detalle)
-├── CREATE_TABLES.sql
-├── SP_CARGA_TABLE_OFERTASLABORALES.sql
-└── main_deploy.py
+- flows/
+    - __init__.py
+    - EducaionIT_flow.py: scraping de ofertas desde el sitio EducacionIT.
+    - gemini_recomedacion.py: generación de recomendaciones laborales usando Gemini.
+    - Linkedin_flow.py: scraping de publicaciones laborales en LinkedIn.
+    - SQL_SP_Empleos_Flow.py: ejecución de stored procedures para cargar datos en PostgreSQL.
+    - Telegram_flow.py: extracción de mensajes desde grupos de Telegram
+
+- .env
+Archivo con variables de entorno (credenciales, configuración)
+- requirements.txt
+Lista de librerías necesarias para ejecutar el proyecto.
+- README.md
+Documentación principal del proyecto.
+- mi_sesion.session
+Archivo generado automáticamente al iniciar sesión en Telegram con Telethon.
+Se crea al ejecutar el script de autenticación. Ver Documentacion.pdf para más detalles.
+- CREATE_TABLES.sql
+Script SQL para crear las tablas necesarias en la base de datos PostgreSQL.
+- SP_CARGA_TABLE_OFERTASLABORALES.sql
+Stored procedure para insertar ofertas laborales en la base.
+- main_deploy.py
+Script principal que ejecuta y despliega el flujo completo usando Prefect
+- Documentacion.pdf
+Documentacion con detalles de las Api keys y cuidados con telegram.
+
 
 
 "Tambien se creara una carpeta pero es la de nuestro entorno env, que lo mas recomendable es crearlo."
@@ -73,7 +85,7 @@ LinkedIn
 Telegram
 - api_id_telegram: ID de API de Telegram
 - api_hash_telegram: Hash secreto de la API
-- id_grupo_telegram: ID o alias del grupo de nuestro grupo Telegram destino, donde se subiran nuestras recomendaciones (ej. @Ofertas_Empleos_1)
+- id_grupo_telegram: ID o alias del grupo de nuestro grupo Telegram destino, donde se subiran nuestras recomendaciones (ej. @Ofertas_Empleos_1).Este grupo debe estar publico.
 
 
 
