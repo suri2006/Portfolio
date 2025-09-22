@@ -3,6 +3,13 @@
 
 # Proyectos
 
+## [JobScraper AI : - Scraping y recomendación de empleos con Gemini y Prefect](https://github.com/suri2006/Portfolio/tree/main/JobScraper_AI)
+JobScraper AI es un proyecto personal que busca automatizar la búsqueda de empleo. Recolecta ofertas desde páginas web y grupos de Telegram, guarda los datos en una base PostgreSQL local, analiza tu currículum en PDF y genera recomendaciones usando Gemini. Luego, te envía esas sugerencias directamente por Telegram. Todo el proceso está orquestado con Prefect para que funcione de forma diaria y sin intervención manual.
+
+
+![Imagen](JobScraper_AI_imag.jpg)
+
+
 ## [RANDSTAD PROJECT : Extracción de tablas y DASHBOARD (Python-Looker](https://github.com/suri2006/Portfolio/tree/main/Randstad_Project)
 Proyecto personal de extracción de todas tablas de los reportes salariales de Randstad que se encuentran en PDF con python.
 
